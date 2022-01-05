@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.wrapper{
+    width: 770px;
+    background: crimson;
+    border-radius: 20px;
+}
+
+.wrapper .content-box{
+    border: 1px solid crimson;/*rgb(211, 54, 85)*/
+    padding: 20px 20px;
+    margin: 10px 10px;
+    border-radius: 20px;
+    background: #222;
+}
+.typing-text p{
+    color: rgb(223, 185, 185);
+    text-align: justify;
+    font-size: 21px;
+    letter-spacing: 4px;
+    /* word-break: break-all; */
+}
+.typing-text p span.active{
+    color:#fff ;
+}
+.typing-text p span{
+    position: relative;
+}
+.typing-text p span.active:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+    background: rgb(0, 128, 128);
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+.typing-text p .correct{
+    color: rgb(0, 128, 128);
+}
+.typing-text p .incorrect{
+    background: rgb(207, 101, 122);
+    border-radius: 3px;
+    color: red;
+}
+.wrapper .typing-text::-webkit-scrollbar{
+    width: 0;
+}
+.wrapper .content-box .typing-text{
+    max-height: 255px;
+    overflow-y: auto;
+    border-bottom: 1px solid crimson;
+    padding-bottom:20px;
+    transition: all 0.3s ease-in;
+}
+
+.content-box .content{
+    display: flex;
+    margin-top: 17px;
+    justify-content: space-between;
+}
+
+.content .result-details {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+    
+}
+.content .result-details li{
+    list-style: none;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    color: rgb(223, 185, 185);
+}
+.content .result-details li:not(:first-child){
+    padding-left: 22px;
+    border-left: 1px solid crimson;
+}
+.result-details li p{
+    font-size: 19px;
+}
+.result-details li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.content button{
+    width: 105px;
+    padding: 6px 0;
+    background: crimson;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease-in-out;
+}
+.content button:hover{
+    background: none;
+    color: crimson;
+    border: 2px solid crimson;
+    cursor: pointer;
+}
+.content button:active{
+    transform: scale(0.9);
+}
+.input-text{
+ 
+    opacity:0
+}
